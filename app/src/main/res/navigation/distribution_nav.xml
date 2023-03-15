@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/distribution_nav"
+    app:startDestination="@id/distributionDataFragment">
+
+    <fragment
+        android:id="@+id/distributionDataFragment"
+        android:name="com.blockmay.brooksdistributor.distribution_data.DistributionDataFragment"
+        android:label="fragment_distribution_data"
+        tools:layout="@layout/fragment_distribution_data" />
+</navigation>
