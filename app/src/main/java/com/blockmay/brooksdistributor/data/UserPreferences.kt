@@ -1,4 +1,4 @@
-package com.blockmay.brooksdistributor.data
+package com.blockmay.waterorder.data
 
 import android.content.Context
 import androidx.datastore.DataStore
@@ -17,7 +17,7 @@ class UserPreferences(
 
     private val applicationContext = context.applicationContext
 
-    private val dataStore: DataStore<androidx.datastore.preferences.Preferences>
+    private val dataStore: DataStore<Preferences>
 
     init {
 
@@ -38,7 +38,7 @@ class UserPreferences(
         preference[FLIGHT_ID]
     }
 
-    val flightName: Flow<String?>
+    val savePhoneNumber: Flow<String?>
         get() = dataStore.data.map { preference->
         preference[FLIGHT_NAME]
     }
@@ -51,6 +51,11 @@ class UserPreferences(
     val lastName: Flow<String?>
         get() = dataStore.data.map { preference->
             preference[LAST_NAME]
+        }
+
+    val notiToken: Flow<String?>
+        get() = dataStore.data.map { preference->
+            preference[NOTI_TOKEN]
         }
 
 
@@ -70,35 +75,42 @@ class UserPreferences(
 
     }
 
-    suspend fun saveFlightId(flightId: String){
+    suspend fun saveEmail(email: String){
         dataStore.edit { preference ->
 
-            preference[FLIGHT_ID] = flightId
+            preference[FLIGHT_ID] = email
         }
 
     }
 
-    suspend fun saveFlightName(flightName: String){
+    suspend fun saveFirstName(flightName: String){
         dataStore.edit { preference ->
 
-            preference[FLIGHT_NAME] = flightName
+            preference[FIRST_NAME] = flightName
         }
 
     }
 
-    suspend fun saveFlightNAme(flightId: String){
+    suspend fun saveLastName(flightId: String){
         dataStore.edit { preference ->
 
-            preference[FLIGHT_ID] = flightId
+            preference[LAST_NAME] = flightId
         }
 
     }
 
-    suspend fun saveUserDetails(firstName: String,lastName: String){
+    suspend fun saveUserPhone(phoneNumber: String){
         dataStore.edit { preference ->
 
-            preference[FIRST_NAME] = firstName
-            preference[LAST_NAME] = lastName
+            preference[FLIGHT_NAME] = phoneNumber
+        }
+
+    }
+
+    suspend fun notiToken(notiToken: String){
+        dataStore.edit { preference ->
+
+            preference[NOTI_TOKEN] = notiToken
         }
 
     }
@@ -114,6 +126,8 @@ class UserPreferences(
         private val LAST_NAME = preferencesKey<String>("last_name")
         private val FLIGHT_ID = preferencesKey<String>("flight_id")
         private val FLIGHT_NAME = preferencesKey<String>("flight_name")
+        private val NOTI_TOKEN = preferencesKey<String>("noti_token")
+
 
 
 

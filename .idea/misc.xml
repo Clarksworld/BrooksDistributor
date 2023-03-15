@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/curve_ten.xml" value="0.1755" />
         <entry key="app/src/main/res/drawable/curve_ten_buton.xml" value="0.187" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.23881856540084387" />
         <entry key="app/src/main/res/layout/activity_distribution_data.xml" value="0.2764102564102564" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.29025641025641025" />
+        <entry key="app/src/main/res/layout/available_orders_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_auth.xml" value="0.23881856540084387" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/fragment_distribution_data.xml" value="0.23881856540084387" />
+        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.23881856540084387" />
+        <entry key="app/src/main/res/layout/fragment_start.xml" value="0.23881856540084387" />
       </map>
     </option>
   </component>

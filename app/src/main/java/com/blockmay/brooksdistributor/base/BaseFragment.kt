@@ -11,10 +11,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
-import com.afrep.afreputility.ui.base.ViewModelFactory
-import com.blockmay.brooksdistributor.data.UserPreferences
 import com.blockmay.brooksdistributor.network.RemoteDataSource
 import com.blockmay.brooksdistributor.repositories.BaseRepository
+import com.blockmay.waterorder.data.UserPreferences
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -41,6 +40,13 @@ abstract class BaseFragment<VM: ViewModel, B: ViewBinding, R: BaseRepository>: F
         viewModel = ViewModelProvider(this, factory).get(getViewModel())
 
         lifecycleScope.launch { userPreference.authToken.first() }
+        lifecycleScope.launch { userPreference.firstName.first() }
+        lifecycleScope.launch { userPreference.lastName.first() }
+        lifecycleScope.launch { userPreference.userId .first() }
+        lifecycleScope.launch { userPreference.savePhoneNumber.first() }
+        lifecycleScope.launch { userPreference.notiToken.first() }
+
+
 
         return binding.root
     }

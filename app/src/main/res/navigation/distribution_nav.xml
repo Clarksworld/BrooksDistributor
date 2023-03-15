@@ -3,11 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/distribution_nav"
-    app:startDestination="@id/distributionDataFragment">
+    app:startDestination="@id/ordersFragment">
 
     <fragment
         android:id="@+id/distributionDataFragment"
         android:name="com.blockmay.brooksdistributor.distribution_data.DistributionDataFragment"
         android:label="fragment_distribution_data"
-        tools:layout="@layout/fragment_distribution_data" />
+        tools:layout="@layout/fragment_distribution_data" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="size"
+            app:argType="string" />
+        <argument
+            android:name="quantity"
+            app:argType="string" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="address"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="payment"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.blockmay.brooksdistributor.distribution_data.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_distributionDataFragment"
+            app:destination="@id/distributionDataFragment" />
+    </fragment>
 </navigation>

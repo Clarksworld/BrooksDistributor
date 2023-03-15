@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/forty_dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:visibility="invisible"
+        android:id="@+id/request_ref_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curve_ten"
+        android:backgroundTint="@color/purple_500"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="@dimen/ten_dp"
+        android:layout_marginTop="@dimen/hundred_fifty_dp"
+        android:text="Request Ref Code"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintBottom_toTopOf="@id/answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer"
+        style="@style/TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:errorEnabled="false"
+        android:hint="Enter Your Ref Code"
+        android:layout_marginTop="@dimen/hundred_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/request_ref_code"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_ref_code_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="@dimen/fourteen_sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/forty_dp"
+            android:backgroundTint="@color/purple_700"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="@dimen/fifteen_dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintTop_toBottomOf="@id/answer"
+            tools:layout_editor_absoluteX="20dp" />
+
+
+    <ProgressBar
+        android:id="@+id/sign_up_progress"
+        android:layout_width="@dimen/forty_dp"
+        android:layout_height="@dimen/forty_dp"
+        android:elevation="@dimen/sixteen_sp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"
+        android:visibility="visible"
+        android:layout_marginRight="@dimen/ten_dp"
+        app:layout_constraintBottom_toBottomOf="@+id/continue_button"
+        app:layout_constraintEnd_toEndOf="@+id/continue_button"
+        app:layout_constraintTop_toTopOf="@+id/continue_button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

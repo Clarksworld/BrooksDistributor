@@ -1,10 +1,11 @@
-package com.afrep.afreputility.ui.base
-
+package com.blockmay.brooksdistributor.base
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.blockmay.brooksdistributor.distribution_data.DistributionDataViewModel
+import com.blockmay.brooksdistributor.distribution_data.OrderViewModel
 import com.blockmay.brooksdistributor.repositories.BaseRepository
 import com.blockmay.brooksdistributor.repositories.DistributionDataRepositories
+import com.blockmay.brooksdistributor.repositories.OrderRepositories
 import java.lang.IllegalArgumentException
 
 @Suppress("UNCHECKED_CAST")
@@ -16,7 +17,7 @@ class ViewModelFactory(
         return  return when {
             modelClass.isAssignableFrom(DistributionDataViewModel::class.java) -> DistributionDataViewModel(repository as DistributionDataRepositories) as T
 
-//            modelClass.isAssignableFrom(AirtimeViewModel::class.java) -> AirtimeViewModel(repository as AirtimeRepository) as T
+            modelClass.isAssignableFrom(OrderViewModel::class.java) -> OrderViewModel(repository as OrderRepositories) as T
 //
 //            modelClass.isAssignableFrom(BuyDataViewModel::class.java) -> BuyDataViewModel(repository as DataRepository) as T
 //
